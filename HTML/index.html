@@ -934,11 +934,15 @@
                       <!-- Reply Messages End -->
 
                       <!-- Contact Form Start -->
-                      <form class="form contact-form" id="contact-form" action="send_email.php" method="POST">
+                      <form class="form contact-form" id="contact-form" name="contact" netlify netlify-honeypot="bot-field" action="/thank-you.html" method="POST">
                         <!-- Hidden Required Fields -->
+                        <input type="hidden" name="form-name" value="contact">
                         <input type="hidden" name="project_name" value="MODO">
                         <input type="hidden" name="admin_email" value="mangel3457@gmail.com">
                         <input type="hidden" name="form_subject" value="Contact Form Message">
+                        <p style="display: none;">
+                          <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </p>
                         <!-- END Hidden Required Fields-->
                         <div class="container-fluid p-0">
                           <div class="row gx-0">
