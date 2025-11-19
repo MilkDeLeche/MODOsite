@@ -1,0 +1,7 @@
+[build]
+  # Publish the HTML folder as the site root
+  publish = "HTML"
+  
+  # No build command needed for static site
+  command = ""
+
