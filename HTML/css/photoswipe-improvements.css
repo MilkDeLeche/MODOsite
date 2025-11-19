@@ -1,0 +1,107 @@
+/* PhotoSwipe Image Quality Improvements */
+
+/* Improve image rendering in PhotoSwipe */
+.pswp__img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  max-width: none !important;
+  max-height: none !important;
+  will-change: transform;
+}
+
+/* Ensure proper image scaling */
+.pswp__zoom-wrap {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Improve thumbnail quality */
+.gallery__image {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+/* Ensure images load properly */
+.gallery__link img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Improve PhotoSwipe container */
+.pswp {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Better image loading */
+.pswp__img--placeholder {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transitions */
+.pswp__img {
+  transition: transform 0.3s ease-out;
+}
+
+/* Prevent image distortion */
+.pswp__img {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Project Link Button Styles */
+.project-link {
+  margin-top: 1.5rem;
+}
+
+.project-link .btn {
+  font-size: 1.4rem;
+  padding: 0.8rem 1.6rem;
+  border: 1px solid var(--per-stroke-elements);
+  background: transparent;
+  color: var(--t-per-base);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  border-radius: var(--_radius-s);
+}
+
+.project-link .btn:hover {
+  background: var(--per-base);
+  color: var(--t-per-bright-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-link .btn i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.project-link .btn:hover i {
+  transform: translate(2px, -2px);
+}
+
+/* Ensure proper spacing in gallery descriptions */
+.gallery__descr {
+  padding-bottom: 2rem;
+}
+
+.gallery__descr p {
+  margin-bottom: 1rem;
+} 
