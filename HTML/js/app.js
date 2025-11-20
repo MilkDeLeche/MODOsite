@@ -584,16 +584,17 @@ $(function() {
     
     const form = this;
     const formData = new FormData(form);
+    const replyMessage = document.querySelector('.form__reply');
     
-    fetch('send_email.php', {
+    // Submit to Netlify Forms
+    fetch('/', {
         method: 'POST',
-        body: formData
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
     })
-    .then(response => response.text())
-    .then(data => {
-        if (data === 'success') {
+    .then(response => {
+        if (response.ok) {
             // Show success message
-            const replyMessage = document.querySelector('.form__reply');
             replyMessage.style.display = 'block';
             form.reset();
             
@@ -602,7 +603,7 @@ $(function() {
                 replyMessage.style.display = 'none';
             }, 5000);
         } else {
-            alert('There was an error sending your message. Please try again later.');
+            throw new Error('Form submission failed');
         }
     })
     .catch(error => {
